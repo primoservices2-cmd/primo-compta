@@ -1,5 +1,4 @@
 'use client'
-import { PrimoLogo } from '@/components/PrimoLogo'
 
 type Props = {
   organisation: {
@@ -25,17 +24,17 @@ export function InvoiceHeader({ organisation, documentType = 'FACTURE', numero =
       {/* ENTETE CLIENT - GRAND */}
       <div className="flex justify-between items-start border-b-2 border-black pb-6">
         <div className="flex gap-4">
-          {organisation.logo_url ? (
-            <img src={organisation.logo_url} alt="Logo client" className="w-20 h-20 object-contain border rounded-xl" />
+          {organisation?.logo_url ? (
+            <img src={organisation.logo_url} alt="Logo client" className="w-20 h-20 object-contain border rounded-xl bg-white" />
           ) : (
-            <div className="w-20 h-20 bg-gray-100 rounded-xl flex items-center justify-center font-black text-xl">{organisation.nom[0]}</div>
+            <img src="/logo.png" alt="PRIMO COMPTA" className="w-20 h-20 object-contain border rounded-xl bg-white p-1" />
           )}
           <div>
-            <h1 className="text-xl font-black">{organisation.societe_nom || organisation.nom}</h1>
+            <h1 className="text-xl font-black">{organisation?.societe_nom || organisation?.nom || 'Organisation'}</h1>
             <div className="text-xs text-gray-600 mt-2 space-y-0.5">
-              <p>{organisation.adresse} - {organisation.ville}</p>
-              <p>Tél: {organisation.telephone} | {organisation.email}</p>
-              <p className="font-mono font-bold">RCCM: {organisation.rccm || '-'} | IDNAT: {organisation.idnat || '-'} | NIF: {organisation.nif || '-'}</p>
+              <p>{organisation?.adresse} - {organisation?.ville}</p>
+              <p>Tél: {organisation?.telephone} | {organisation?.email}</p>
+              <p className="font-mono font-bold">RCCM: {organisation?.rccm || '-'} | IDNAT: {organisation?.idnat || '-'} | NIF: {organisation?.nif || '-'}</p>
             </div>
           </div>
         </div>
@@ -45,13 +44,13 @@ export function InvoiceHeader({ organisation, documentType = 'FACTURE', numero =
         </div>
       </div>
 
-      {/* FOOTER DISCRET PRIMO COMPTA */}
+      {/* FOOTER DISCRET PRIMO COMPTA AVEC VRAI LOGO */}
       <div className="mt-8 pt-4 border-t flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <div className="w-5 h-5 bg-black text-white flex items-center justify-center font-black rounded text-[10px]">P</div>
-          <span className="text-[10px] text-gray-400">Document généré par PRIMO COMPTA - compta.primo.cd - Powered by PRIMO COMPTA</span>
+          <img src="/logo.png" alt="PRIMO" className="w-6 h-6 object-contain" />
+          <span className="text- text-gray-400">Document généré par PRIMO COMPTA - compta.primo.cd</span>
         </div>
-        <span className="text-[9px] text-gray-300">ACCOUNTING MANAGEMENT</span>
+        <span className="text- text-gray-300">ACCOUNTING MANAGEMENT</span>
       </div>
     </div>
   )
