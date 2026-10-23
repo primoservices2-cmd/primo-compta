@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase'
+import { PrimoLogo } from '@/components/PrimoLogo'
 
 type Organisation = {
   id: string
@@ -64,12 +65,8 @@ export default function OrganisationsPage() {
       <header className="border-b bg-white sticky top-0 z-20">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            {/* LOGO PRIMO COMPTA PLATEFORME - partout */}
-            <div className="w-9 h-9 bg-black text-white flex items-center justify-center font-black rounded-xl">P</div>
-            <div>
-              <div className="font-black tracking-widest leading-none">PRIMO COMPTA</div>
-              <div className="text-[10px] text-gray-400 tracking-widest">ACCOUNTING PLATFORM</div>
-            </div>
+            {/* LOGO PRIMO COMPTA PLATEFORME - BASE64 - partout */}
+            <PrimoLogo size="sm" />
             <span className="text-gray-200 mx-2">/</span>
             <span className="text-sm font-medium">Organisations clientes</span>
           </div>
