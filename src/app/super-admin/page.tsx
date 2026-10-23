@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase'
+import { PrimoLogo } from '@/components/PrimoLogo'
 
 export default function SuperAdminPage() {
   const [stats, setStats] = useState({ magasins: '--', users: '--', ventes: '--', chiffre: '--' })
@@ -26,8 +27,8 @@ export default function SuperAdminPage() {
       <header className="border-b bg-white sticky top-0 z-20">
         <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            {/* VRAI LOGO */}
-            <img src="/Logo.png" alt="PRIMO COMPTA" className="h-10 w-auto object-contain" onError={(e) => { (e.target as HTMLImageElement).style.display='none' }} />
+            {/* VRAI LOGO BASE64 - ne dépend plus de /Logo.png */}
+            <PrimoLogo size="md" />
             <div className="hidden md:flex items-center gap-2 ml-2">
               <span className="text-gray-300">/</span>
               <span className="text-sm font-bold text-red-600 tracking-widest">SUPER ADMIN</span>
@@ -106,7 +107,7 @@ export default function SuperAdminPage() {
             <h3 className="font-bold">🧾 Modèle Facture</h3>
             <p className="text-sm text-gray-500 mt-2">Logo client en grand, footer discret PRIMO COMPTA</p>
             <div className="mt-4 p-3 bg-gray-50 rounded-xl flex items-center gap-3">
-              <img src="/Logo.png" className="w-8 h-8 object-contain" />
+              <PrimoLogo size="sm" showSub={false} />
               <div className="text-xs">
                 <p className="font-bold">PRIMO COMPTA</p>
                 <p className="text-gray-400">Logo plateforme en footer facture</p>
