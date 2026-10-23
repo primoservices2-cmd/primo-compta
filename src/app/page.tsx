@@ -9,7 +9,7 @@ export default function HomePagePremium() {
       <header className="sticky top-0 z-40 backdrop-blur-xl bg-white/70 border-b border-zinc-100">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10 h-[72px] flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <PrimoLogo size="md" /> className="h-[36px] w-auto" />
+            <PrimoLogo size="md" />
           </div>
           <nav className="hidden md:flex items-center gap-8 text-[13px] font-medium text-zinc-500">
             <span>Organisations</span>
@@ -96,8 +96,8 @@ export default function HomePagePremium() {
                     <span className="text-xl font-bold">705.000 CDF</span>
                   </div>
                   <div className="mt-5 pt-4 border-t border-dashed flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <img src="/Logo.png?v=4" className="h-4 w-auto opacity-60" />
+                    <div className="flex items-center gap-2 opacity-60">
+                      <PrimoLogo size="sm" showSub={false} />
                       <span className="text-[9px] tracking-[0.2em] text-zinc-400">POWERED BY PRIMO COMPTA</span>
                     </div>
                     <span className="text-[9px] text-zinc-400">compta.primo.cd • Document officiel</span>
@@ -137,7 +137,7 @@ export default function HomePagePremium() {
       {/* FOOTER */}
       <footer className="max-w-[1280px] mx-auto px-6 md:px-10 py-10 flex flex-col md:flex-row justify-between gap-4">
         <div className="flex items-center gap-3">
-          <img src="/Logo.png?v=4" className="h-6 w-auto" />
+          <PrimoLogo size="sm" />
           <span className="text-xs text-zinc-500">© 2026 PRIMO COMPTA — Accounting Management — Kinshasa</span>
         </div>
         <div className="text-[11px] tracking-widest text-zinc-400">BUILT FOR DRC • RCCM • IDNAT • NIF • FACTURES CONFORMES</div>
