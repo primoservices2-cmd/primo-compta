@@ -1,4 +1,5 @@
 'use client'
+import { PrimoLogo } from "@/components/PrimoLogo"
 import Link from 'next/link'
 
 export default function HomePagePremium() {
@@ -8,7 +9,7 @@ export default function HomePagePremium() {
       <header className="sticky top-0 z-40 backdrop-blur-xl bg-white/70 border-b border-zinc-100">
         <div className="max-w-[1280px] mx-auto px-6 md:px-10 h-[72px] flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/Logo.png?v=4" alt="PRIMO COMPTA" className="h-[36px] w-auto" />
+            <PrimoLogo size="md" /> className="h-[36px] w-auto" />
           </div>
           <nav className="hidden md:flex items-center gap-8 text-[13px] font-medium text-zinc-500">
             <span>Organisations</span>
